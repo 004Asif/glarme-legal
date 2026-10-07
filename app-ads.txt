@@ -1,0 +1,5 @@
+# TODO: replace pub-XXXXXXXXXXXXXXXX below with your real AdMob publisher ID (AdMob > Account settings).
+# NOTE: AdMob requires app-ads.txt at the root of the developer website domain listed on the Play Store listing.
+# A github.io project subpath (https://004asif.github.io/glarme-legal/app-ads.txt) does NOT satisfy that; this copy is kept for reference only.
+# Until a custom domain root exists, AdMob reports "app-ads.txt not found" but ads still serve.
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

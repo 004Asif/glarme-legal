@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Collection - Glarme</title>
+<meta name="description" content="What data Glarme collects, who it is shared with, and how to delete your account.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#02154E;--crimson:#D61233;--bg:#F4F7FB;--text:#1B2433;--card:#FFFFFF;--muted:#5A6478;--border:#D9E0EC}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0A1230;--text:#E6EBF5;--card:#121C41;--muted:#A3AEC6;--border:#26335E;--navy:#8FA8FF;--crimson:#FF5470}}
+:root[data-theme="dark"]{--bg:#0A1230;--text:#E6EBF5;--card:#121C41;--muted:#A3AEC6;--border:#26335E;--navy:#8FA8FF;--crimson:#FF5470}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px}
+main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+h1,h2,h3{font-family:"VT323",ui-monospace,monospace;color:var(--navy);line-height:1.1;font-weight:400}
+h1{font-size:3rem;margin:0 0 4px;border-bottom:4px solid var(--crimson);padding-bottom:8px}
+h2{font-size:2rem;margin:32px 0 8px;scroll-margin-top:12px}
+h3{font-size:1.5rem;margin:20px 0 4px}
+a{color:var(--crimson)}
+p,li{margin:8px 0}
+.updated{color:var(--muted);margin:0 0 20px}
+nav.toc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 18px}
+nav.toc strong{font-family:"VT323",ui-monospace,monospace;color:var(--navy);font-size:1.5rem;font-weight:400}
+nav.toc ol{margin:6px 0 0;padding-left:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:16px 0}
+.table-wrap{overflow-x:auto;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#fff}
+ol.steps li{margin:10px 0}
+footer{margin-top:40px;border-top:1px solid var(--border);padding-top:12px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<h1>Data Collection</h1>
+<p class="updated">Last updated: October 8, 2026</p>
+
+<p>This page summarises the data Glarme collects, in the same categories used by Google Play's "Data safety" section. The full details are in our <a href="../privacy/">Privacy Policy</a>.</p>
+
+<nav class="toc" aria-label="Table of contents">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#summary">Data safety summary</a></li>
+    <li><a href="#guest">Guest mode and device-only data</a></li>
+    <li><a href="#account">Accounts and the leaderboard</a></li>
+    <li><a href="#ads">Advertising</a></li>
+    <li><a href="#purchases">Purchases</a></li>
+    <li><a href="#delete-account">Deleting your account</a></li>
+  </ol>
+</nav>
+
+<h2 id="summary">Data safety summary</h2>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Data type</th><th>Collected?</th><th>Shared?</th><th>Purpose</th><th>Optional?</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Personal info: email address</td>
+      <td>Yes, only if you create an account</td>
+      <td>Yes, with Supabase (our hosting and authentication provider)</td>
+      <td>Account sign-in, email verification, password reset</td>
+      <td>Optional. The App works fully without an account.</td>
+    </tr>
+    <tr>
+      <td>Personal info: display name</td>
+      <td>Yes, only if you create an account</td>
+      <td>Yes, shown publicly on the leaderboard to all App users</td>
+      <td>Profile and leaderboard</td>
+      <td>Optional. Choose a name that is not your real name if you prefer.</td>
+    </tr>
+    <tr>
+      <td>App activity: in-app stats (wake-up streak, app-usage streak, challenges solved, level, title, average wake-up time)</td>
+      <td>Yes, for accounts (synced). Guest stats stay on your device only.</td>
+      <td>Yes, the leaderboard shows the stats: display name, title, level, wake-up streak, app streak, challenges solved</td>
+      <td>Profile, streaks, leaderboard</td>
+      <td>Optional. Guest mode works without sharing anything.</td>
+    </tr>
+    <tr>
+      <td>Device or other IDs: advertising ID</td>
+      <td>Yes, collected by Google AdMob in the free version</td>
+      <td>Yes, with Google (ad network)</td>
+      <td>Serving, measuring and (where allowed) personalising ads</td>
+      <td>Personalisation can be turned off in Settings &gt; Privacy</td>
+    </tr>
+    <tr>
+      <td>Approximate location (derived from IP address)</td>
+      <td>Collected by Google AdMob in the free version. We do not collect precise location.</td>
+      <td>Yes, with Google (ad network)</td>
+      <td>Serving and measuring ads, security</td>
+      <td>Not requested by the App; collected by the ad network with ad requests</td>
+    </tr>
+    <tr>
+      <td>App activity: app interactions (ad interactions, collected by Google AdMob)</td>
+      <td>Yes, collected by Google AdMob in the free version</td>
+      <td>Yes, with Google (ad network)</td>
+      <td>Serving, measuring and securing ads</td>
+      <td>Required by the ads SDK in the free version. Ad personalisation can be turned off in Settings &gt; Privacy.</td>
+    </tr>
+    <tr>
+      <td>App info and performance: diagnostics (crash logs and performance data, collected by Google AdMob)</td>
+      <td>Yes, collected by Google AdMob in the free version</td>
+      <td>Yes, with Google (ad network)</td>
+      <td>Running, securing and improving ads</td>
+      <td>Required by the ads SDK in the free version.</td>
+    </tr>
+    <tr>
+      <td>Financial info: purchase history and status</td>
+      <td>Yes, via Google Play and RevenueCat. We never receive card details.</td>
+      <td>Yes, with RevenueCat and Google Play</td>
+      <td>Managing subscriptions and unlocking purchased features</td>
+      <td>Optional. Only if you buy something.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>We do not add analytics or crash-reporting SDKs of our own, we do not sell personal data, and we do not share data with third parties for marketing beyond the ad network above. The ads SDK described above may collect diagnostics and app-interaction data on its own, as noted in the table.</p>
+
+<h2 id="guest">Guest mode and device-only data</h2>
+<p>Without an account, Glarme keeps everything on your device: alarms, alarm settings, sound choices, app settings, and guest statistics. This data is not uploaded. It is lost if you clear the App's data or uninstall the App.</p>
+
+<h2 id="account">Accounts and the leaderboard</h2>
+<p>Creating an account is optional. Accounts use email and password sign-in through Supabase. Your profile stats are stored with Supabase and your display name and stats appear on the public leaderboard, which guests can also see.</p>
+
+<h2 id="ads">Advertising</h2>
+<p>The free version shows ads from Google AdMob. AdMob may also collect app-interaction data and diagnostics (such as crash and performance logs) to run and secure ads. In the European Economic Area, the United Kingdom and Switzerland you may see Google's consent form. You can change ad choices later in the App under "Ad privacy options" (where available), and you can turn off "Personalized ads" in <em>Settings &gt; Privacy</em>.</p>
+
+<h2 id="purchases">Purchases</h2>
+<p>Subscriptions and in-app purchases are processed by Google Play. RevenueCat manages entitlements and receives purchase status with an anonymous app user identifier.</p>
+
+<h2 id="delete-account">Deleting your account</h2>
+<p>You can delete your account and the data we hold for it at any time. There are two ways to do this.</p>
+
+<h3>Option 1: delete in the App (immediate)</h3>
+<div class="card">
+  <ol class="steps">
+    <li>Open Glarme and go to <strong>Settings &gt; Delete account</strong>.</li>
+    <li>Type <strong>DELETE</strong> to confirm.</li>
+    <li>Your account is deleted immediately. This removes your profile, your stats, your leaderboard entry, and your sign-in.</li>
+  </ol>
+</div>
+
+<h3>Option 2: request deletion by email (if you no longer have the App)</h3>
+<div class="card">
+  <ol class="steps">
+    <li>Open an email app and start a new message to <a href="mailto:support@glarme.com?subject=Delete%20my%20account">support@glarme.com</a>.</li>
+    <li>Use the subject line <strong>Delete my account</strong>.</li>
+    <li>Send the email from the same address you used to create your Glarme account, so we can verify the request.</li>
+    <li>We will confirm receipt and delete your account data within <strong>30 days</strong>. Account data includes your email address, display name, and profile stats. It is then removed from the leaderboard.</li>
+  </ol>
+</div>
+
+<h3>What deletion does not remove</h3>
+<ul>
+  <li><strong>Alarms and app settings</strong> stay on your device. Account deletion does not touch them. To remove them, clear the App's data or uninstall the App.</li>
+  <li><strong>Guest data</strong> is stored only on your device, so we cannot delete it for you. Clear the App's data or uninstall the App to remove it.</li>
+  <li><strong>Subscriptions</strong> are billed by Google Play. Deleting your account does not cancel a subscription. Cancel it in Google Play under <em>Payments &amp; subscriptions</em>.</li>
+  <li><strong>Purchase records</strong> held by Google Play are governed by Google's policies.</li>
+</ul>
+
+<footer>
+  <!-- TODO confirm support address -->
+  <p>&copy; 2026 ADot.Interactive &middot; Developed by 004asif &middot; Contact: support@glarme.com</p>
+</footer>
+</main>
+</body>
+</html>
